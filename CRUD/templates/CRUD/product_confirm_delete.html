@@ -1,0 +1,16 @@
+{% extends "CRUD/base.html" %}
+{% block content %}
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset>
+                <legend class="border-bottom mb-4">Delete Product</legend>
+                <h3>Are you sure you want to delete the product "{{ object.productName }}?"</h3> &nbsp;
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-danger" type="submit">Confirm</button>
+                <a class="btn btn-primary" href="{% url 'crud-home' %}">Cancel</a>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
